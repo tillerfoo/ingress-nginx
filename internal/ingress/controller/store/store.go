@@ -834,6 +834,7 @@ func checkBadAnnotationValue(annotations map[string]string, badwords string) err
 
 // syncIngress parses ingress annotations converting the value of the
 // annotation to a go struct
+//@codeql tainttrack InParam(0)
 func (s *k8sStore) syncIngress(ing *networkingv1.Ingress) {
 	key := k8s.MetaNamespaceKey(ing)
 	klog.V(3).Infof("updating annotations information for ingress %v", key)
